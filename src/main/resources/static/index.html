@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>航班座位自动分配系统</title>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/customer.css" />
+		<!--引入阿里巴巴矢量图库-->
+		<script src="js/font_1120410_ssegy2yhf59.js"></script>
+
+		<!-- 工具JS文件 -->
+		<script src="js/common-util.js"></script>
+
+		<!--自定JS文件-->
+		<script src="js/main.js"></script>
+	</head>
+
+	<body>
+		<!-- 头部 -->
+		<div class="container page-header">
+			<!-- Logo -->
+			<div class="col-md-6">
+				<h1 style="font-weight: bold;">
+						航班座位自动分配系统
+				</h1>
+			</div>
+			<div class="col-md-offset-2 col-md-4"></div>
+		</div>
+
+		<!-- 机型原图-->
+		<div class="container">
+			<div class="col-md-6">
+				<span class="page-title">
+					机型图：
+				</span>
+			</div>
+			<div class="col-md-6 selectType">
+				<label for="" class="">选择机型：</label>
+				<select id="type">
+					<option value="1" imgSrc="img/空客321NEO(32N).png">空客321NEO(32N)</option>
+					<option value="2" imgSrc="img/B737-300.png">B737-300</option>
+					<option value="3" selected="true" imgSrc="img/787-9.jpg">波音787-9</option>
+				</select>
+			</div>
+
+			<div class="col-md-12 parameter">
+				<p1 class="type">
+					<!--<span id="company">
+						波音
+					</span>-->
+					<span id="model">
+						787-9
+					</span>
+				</p1>
+				<p class="seatDistribution">
+					<div id="seatInfo" class="col-md-4">
+						<span class="key">
+						经济舱：
+						</span>
+						<span class="value">
+						35~61
+						</span> 排
+						<span class="count">
+						(<span class="num">
+							229
+						</span>个座位)
+						</span>
+
+					</div>
+
+					<div id="exitInfo" class="col-md-4">
+						<span class="key">
+							出口：
+						</span>
+						<span class="value">
+							4
+						</span>个
+					</div>
+				</p>
+
+			</div>
+
+			<div class="co-md-12">
+				<img src="img/787-9.jpg" id="filght_image" />
+			</div>
+		</div>
+
+		<div class="container">
+			<div id="simulation">
+				<h4>模拟座位图：</h4>
+				<div class="map">
+
+				</div>
+
+				<table id="mapper">
+					<tr>
+						<td>
+							<span class="mapper-icon">
+								<svg class="icon optional" aria-hidden="true"><use xlink:href="#icon-yuanjiao-rect"></use></svg>
+							</span>
+							<span class="mapper-introduce">未选座位</span>
+						</td>
+						<td>
+							<span class="mapper-icon">
+								<svg class="icon notSelected" aria-hidden="true"><use xlink:href="#icon-yuanjiao-rect"></use></svg>
+							</span>
+							<span class="mapper-introduce">已选座位</span>
+						</td>
+						<td>
+							<span class="mapper-icon">
+								<svg class="icon selected" aria-hidden="true"><use xlink:href="#icon-yuanjiao-rect"></use></svg>
+							</span>
+							<span class="mapper-introduce">我的座位</span>
+						</td>
+						<td>
+							<span class="mapper-icon">
+								<svg class="icon exit" aria-hidden="true"><use xlink:href="#icon-sanjiaoxing-xia"></use></svg>
+							</span>
+							<span class="mapper-introduce">出口</span>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+
+		<div class="footer container-fluid">
+			<div class="container">
+				<div class="col-md-6">
+					<p class="tips">
+						注：本系统处于测试阶段，暂时只提供经济舱分配
+					</p>
+				</div>
+				<div class="col-md-6 friendshiplink">
+					<ul class="list-unstyled list-inline">
+						<li class="list-title">友情链接：</li>
+						<li>
+							<a href="http://www.airchina.com.cn/cn/info/flight-experience/cabin-type-view/959.shtml">中国国际航空</a>
+						</li>
+						<li>
+							<a href="https://www.csair.com/cn/tourguide/flight_service/cabin_layout/kongke/index.shtml">中国南方航空</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
